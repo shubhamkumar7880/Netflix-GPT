@@ -5,3 +5,12 @@ export const userIcon =
   "https://i.pinimg.com/474x/5b/50/e7/5b50e75d07c726d36f397f6359098f58.jpg";
 
 export const MY_ICON = "https://avatars.githubusercontent.com/u/75887562?v=4";
+
+export const API_OPTIONS = {
+  method: "GET",
+  headers: {
+    accept: "application/json",
+    Authorization:
+      "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJmMjczZGNlMjkxODc4ZTExZTU4ZTMyODBiMjRlMjRiNyIsInN1YiI6IjY1OTRmMmJjMGU2NGFmNDhmOThjMTk0ZCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.R-cbIkIgJEM1ksHFwyiRXGhB6okbriQKs_DMFOgUs_4",
+  },
+};
