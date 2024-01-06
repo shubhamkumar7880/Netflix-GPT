@@ -4,13 +4,17 @@ import { auth } from "../utils/firebase";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { addUser, removeUser } from "../utils/userSlice";
-import { LOGO_URL, userIcon } from "../utils/const";
+import { LOGO_URL, SUPPORTED_LANG, userIcon } from "../utils/const";
 import { toggleGptSearchView } from "../utils/gptSlice";
+import { changeLanguage } from "../utils/configSlice";
+import language from "../utils/languageConstant";
 
 const Header = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const user = useSelector((store) => store.user);
+  const showGpt = useSelector((store) => store.gpt?.showGptSearch);
+  const lang = useSelector((store) => store.config?.lang);
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
@@ -40,6 +44,10 @@ const Header = () => {
       });
   };
 
+  const handleLangChange = (e) => {
+    dispatch(changeLanguage(e.target.value));
+  };
+
   const handleGptSearchClick = () => {
     dispatch(toggleGptSearchView());
   };
@@ -48,21 +56,27 @@ const Header = () => {
       <img className="w-44" src={LOGO_URL} alt="logo" />
       {user && (
         <div className="flex p-2">
-          <select>
-            <option value="en">English</option>
-            <option value="hindi">Hindi</option>
-            <option value="french">French</option>
-            <option value="spanish">Spanish</option>
+          <select
+            className="p-2 bg-red-800 text-white m-2 rounded-lg"
+            onChange={handleLangChange}
+          >
+            {SUPPORTED_LANG.map((lang) => (
+              <option className="bg-gray-900" value={lang?.identifier}>
+                {lang?.name}
+              </option>
+            ))}
           </select>
           <button
             className="py-2 px-4 mx-4 my-2 bg-red-800 rounded-lg text-white"
             onClick={handleGptSearchClick}
           >
-            GPT Search
+            {!showGpt
+              ? language[lang].gpt + " " + language[lang].search
+              : language[lang].home}
           </button>
           <img src={userIcon} alt="user icon" className="w-8 h-8 mt-2 mr-2" />
           <button className="font-bold text-white" onClick={handleSignOut}>
-            Sign Out
+            {language[lang].signOut}
           </button>
         </div>
       )}
