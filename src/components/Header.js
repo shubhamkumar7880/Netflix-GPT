@@ -48,6 +48,12 @@ const Header = () => {
       <img className="w-44" src={LOGO_URL} alt="logo" />
       {user && (
         <div className="flex p-2">
+          <select>
+            <option value="en">English</option>
+            <option value="hindi">Hindi</option>
+            <option value="french">French</option>
+            <option value="spanish">Spanish</option>
+          </select>
           <button
             className="py-2 px-4 mx-4 my-2 bg-red-800 rounded-lg text-white"
             onClick={handleGptSearchClick}
