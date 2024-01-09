@@ -2,15 +2,16 @@ const language = {
   en: {
     search: "Search",
     gptSearchPlaceHolder: "What would you like to watch today?",
-    nowPlaying: "now Playing",
+    nowPlaying: "Now Playing",
     popular: "Popular",
     topRated: "Top-Rated",
     upcoming: "Upcoming",
-    play: "play",
+    play: "Play",
     signOut: "Sign Out",
     gpt: "GPT",
     home: "Home",
     moreInfo: "More Info",
+    searchResultsFor: "search results for",
   },
   hindi: {
     search: "खोज",
@@ -24,6 +25,7 @@ const language = {
     gpt: "जीपीटी",
     home: "होम",
     moreInfo: "अधिक जानकारी",
+    searchResultsFor: "खोज परिणाम",
   },
   french: {
     search: "recherche",
@@ -37,6 +39,7 @@ const language = {
     gpt: "GPT",
     home: "home",
     moreInfo: "plus d'informations",
+    searchResultsFor: "Résultats de recherche pour",
   },
   spanish: {
     search: "buscar",
@@ -50,6 +53,7 @@ const language = {
     gpt: "GPT",
     home: "home",
     moreInfo: "más información",
+    searchResultsFor: "resultados de búsqueda para",
   },
 };
 

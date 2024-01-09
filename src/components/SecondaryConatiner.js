@@ -9,7 +9,7 @@ const SecondaryConatiner = () => {
 
   return (
     <div className="bg-black">
-      <div className="-mt-60 pl-16 relative z-20">
+      <div className="mt-0 md:-mt-60 pl-4 md:pl-16 relative z-20">
         <MovieList
           title={language[lang].nowPlaying}
           movies={movies.nowPlayingMovies}

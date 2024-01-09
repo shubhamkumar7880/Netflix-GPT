@@ -7,11 +7,17 @@ const GptSearch = () => {
   const [loading, setLoading] = useState(false);
   return (
     <div>
-      <div className="absolute -z-10">
-        <img src={BG_IMG} alt="bg img" />
+      <div className="fixed -z-10">
+        <img
+          className="h-screen w-screen object-cover"
+          src={BG_IMG}
+          alt="bg img"
+        />
       </div>
-      <GptSearchBar setLoading={setLoading} />
-      <GptMovieSuggestion loading={loading} />
+      <div className="">
+        <GptSearchBar setLoading={setLoading} />
+        <GptMovieSuggestion loading={loading} />
+      </div>
     </div>
   );
 };

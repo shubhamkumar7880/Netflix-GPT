@@ -52,12 +52,12 @@ const Header = () => {
     dispatch(toggleGptSearchView());
   };
   return (
-    <div className="absolute w-screen px-8 py-2 bg-gradient-to-b from-black z-10 flex justify-between">
-      <img className="w-44" src={LOGO_URL} alt="logo" />
+    <div className="absolute w-screen px-8 py-2 bg-gradient-to-b from-black z-10 flex justify-between flex-col md:flex-row">
+      <img className="w-44 mx-auto md:mx-0" src={LOGO_URL} alt="logo" />
       {user && (
-        <div className="flex p-2">
+        <div className="flex p-0 md:p-2 justify-between">
           <select
-            className="p-2 bg-red-800 text-white m-2 rounded-lg"
+            className="p-0 md:p-2 bg-red-800 text-white m-2 rounded-lg"
             onChange={handleLangChange}
           >
             {SUPPORTED_LANG.map((lang) => (
@@ -71,16 +71,20 @@ const Header = () => {
             ))}
           </select>
           <button
-            className="py-2 px-4 mx-4 my-2 bg-red-800 rounded-lg text-white"
+            className="py-2 px-2 md:px-4 mx-4 my-2 bg-red-800 rounded-lg text-white"
             onClick={handleGptSearchClick}
           >
             {!showGpt
               ? language[lang].gpt + " " + language[lang].search
               : language[lang].home}
           </button>
-          <img src={userIcon} alt="user icon" className="w-8 h-8 mt-2 mr-2" />
+          <img
+            src={userIcon}
+            alt="user icon"
+            className="w-8 h-8 mt-2 mr-2 hidden md:block"
+          />
           <button className="font-bold text-white" onClick={handleSignOut}>
-            {language[lang].signOut}
+            ({language[lang].signOut})
           </button>
         </div>
       )}
