@@ -27,7 +27,7 @@ const SecondaryConatiner = () => {
           movies={movies.topRatedMovies}
         />
         <MovieList
-          title={language[lang].topRatedMovies}
+          title={language[lang].topRatedTV}
           movies={movies.topRatedTV}
         />
       </div>

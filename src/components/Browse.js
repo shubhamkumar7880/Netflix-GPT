@@ -14,17 +14,11 @@ import useTopRatedTV from "./hooks/useTopRatedTV.js";
 
 const Browse = () => {
   const gptSearchView = useSelector((store) => store.gpt?.showGptSearch);
-  const user = useSelector((store) => store.user);
-  const navigate = useNavigate();
-  useEffect(() => {
-    if (!user) navigate("/");
-  }, []);
   useAllTrending();
   useNowPlayingMovies();
   useAiringTodayTV();
   useTopRated();
   useTopRatedTV();
-  if (!user) return <FullPageLoader />;
   return (
     <div>
       <Header />

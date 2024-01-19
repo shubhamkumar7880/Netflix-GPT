@@ -17,6 +17,7 @@ const Header = () => {
   const user = useSelector((store) => store.user);
   const showGpt = useSelector((store) => store.gpt?.showGptSearch);
   const lang = useSelector((store) => store.config?.lang);
+
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
@@ -29,7 +30,6 @@ const Header = () => {
             photoURL,
           })
         );
-        navigate("/browse");
       } else {
         dispatch(removeUser());
         navigate("/");
@@ -38,6 +38,7 @@ const Header = () => {
 
     return () => unsubscribe();
   }, []);
+
   const handleSignOut = () => {
     signOut(auth)
       .then(() => {})
@@ -66,7 +67,13 @@ const Header = () => {
             >
               <Link to="/browse">Home</Link>
             </li>
-            <li className="mr-6">Movies</li>
+            <li
+              className={`mr-6 ${
+                location.pathname === "/browse/movies" ? "font-bold" : ""
+              }`}
+            >
+              <Link to="/browse/movies">Movies</Link>
+            </li>
             <li className="mr-6">TV Shows</li>
           </ul>
         )}

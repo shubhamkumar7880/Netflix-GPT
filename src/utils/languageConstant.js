@@ -16,6 +16,7 @@ const language = {
     trendingMovies: "Trending Movies",
     trendingTV: "Trending TV Shows",
     airingToday: "Airing Today",
+    topRatedTV: "Top-Rated TV Shows",
   },
   hindi: {
     search: "खोज",
@@ -34,6 +35,7 @@ const language = {
     trendingMovies: "ट्रेंडिंग फिल्में",
     trendingTV: "ट्रेंडिंग टीवी शो",
     airingToday: "आज प्रसारित हो रहा है",
+    topRatedTV: "टॉप रेटेड टीवी शो",
   },
   french: {
     search: "recherche",
@@ -52,6 +54,7 @@ const language = {
     trendingMovies: "films tendances",
     trendingTV: "ÉMISSIONS TV tendances",
     airingToday: "diffusé aujourd'hui",
+    topRatedTV: "Émissions de télévision les mieux notées",
   },
   spanish: {
     search: "buscar",
@@ -70,6 +73,7 @@ const language = {
     trendingMovies: "películas de tendencia",
     trendingTV: "Programas de televisión de tendencia",
     airingToday: "transmitiendo hoy",
+    topRatedTV: "Programas de televisión mejor valorados",
   },
 };
 
