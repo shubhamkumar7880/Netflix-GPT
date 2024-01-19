@@ -12,6 +12,9 @@ const language = {
     home: "Home",
     moreInfo: "More Info",
     searchResultsFor: "search results for",
+    trending: "Trending",
+    trendingMovies: "Trending Movies",
+    trendingTV: "Trending TV Shows",
   },
   hindi: {
     search: "खोज",
@@ -26,6 +29,9 @@ const language = {
     home: "होम",
     moreInfo: "अधिक जानकारी",
     searchResultsFor: "खोज परिणाम",
+    trending: "ट्रेंडिंग",
+    trendingMovies: "ट्रेंडिंग फिल्में",
+    trendingTV: "ट्रेंडिंग टीवी शो",
   },
   french: {
     search: "recherche",
@@ -40,6 +46,9 @@ const language = {
     home: "home",
     moreInfo: "plus d'informations",
     searchResultsFor: "Résultats de recherche pour",
+    trending: "tendance",
+    trendingMovies: "films tendances",
+    trendingTV: "ÉMISSIONS TV tendances",
   },
   spanish: {
     search: "buscar",
@@ -54,6 +63,9 @@ const language = {
     home: "home",
     moreInfo: "más información",
     searchResultsFor: "resultados de búsqueda para",
+    trending: "tendencias",
+    trendingMovies: "películas de tendencia",
+    trendingTV: "Programas de televisión de tendencia",
   },
 };
 

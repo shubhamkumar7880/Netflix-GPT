@@ -1,15 +1,14 @@
 import React, { useEffect } from "react";
 import Header from "./Header";
-import useNowPlayingMovies from "./hooks/useNowPlayingMovies";
 import MainContainer from "./MainContainer";
 import SecondaryConatiner from "./SecondaryConatiner";
-import usePopularMovies from "./hooks/usePopularMovies";
-import useTopRatedMovies from "./hooks/useTopRated";
-import useUpcomingMovies from "./hooks/useUpcomingMovies";
 import GptSearch from "./GptSearch";
 import { useSelector } from "react-redux";
 import FullPageLoader from "../utils/FullPageLoader";
 import { useNavigate } from "react-router-dom";
+import useAllTrending from "./hooks/useAllTrending";
+import useTrendingMovies from "./hooks/useTrendingMovies";
+import useTrendingTV from "./hooks/useTrendingTV";
 
 const Browse = () => {
   const gptSearchView = useSelector((store) => store.gpt?.showGptSearch);
@@ -18,10 +17,9 @@ const Browse = () => {
   useEffect(() => {
     if (!user) navigate("/");
   }, []);
-  useNowPlayingMovies();
-  usePopularMovies();
-  useTopRatedMovies();
-  useUpcomingMovies();
+  useAllTrending();
+  useTrendingMovies();
+  useTrendingTV();
   if (!user) return <FullPageLoader />;
   return (
     <div>

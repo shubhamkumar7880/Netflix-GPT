@@ -81,7 +81,7 @@ const Header = () => {
           <img
             src={userIcon}
             alt="user icon"
-            className="w-8 h-8 mt-2 mr-2 hidden md:block"
+            className="w-8 h-8 mt-3 mr-2 hidden md:block"
           />
           <button className="font-bold text-white" onClick={handleSignOut}>
             ({language[lang].signOut})

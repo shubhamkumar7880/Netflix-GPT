@@ -11,20 +11,16 @@ const SecondaryConatiner = () => {
     <div className="bg-black">
       <div className="mt-0 md:-mt-60 pl-4 md:pl-16 relative z-20">
         <MovieList
-          title={language[lang].nowPlaying}
-          movies={movies.nowPlayingMovies}
+          title={language[lang].trending}
+          movies={movies.allTrending}
         />
         <MovieList
-          title={language[lang].popular}
-          movies={movies.popularMovies}
+          title={language[lang].trendingMovies}
+          movies={movies.trendingMovies}
         />
         <MovieList
-          title={language[lang].topRated}
-          movies={movies.topRatedMovies}
-        />
-        <MovieList
-          title={language[lang].upcoming}
-          movies={movies.upcomingMovies}
+          title={language[lang].trendingTV}
+          movies={movies.trendingTV}
         />
       </div>
     </div>
