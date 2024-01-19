@@ -1,17 +1,19 @@
 import { onAuthStateChanged, signOut } from "firebase/auth";
 import React, { useEffect } from "react";
 import { auth } from "../utils/firebase";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { addUser, removeUser } from "../utils/userSlice";
 import { LOGO_URL, SUPPORTED_LANG, userIcon } from "../utils/const";
 import { toggleGptSearchView } from "../utils/gptSlice";
 import { changeLanguage } from "../utils/configSlice";
 import language from "../utils/languageConstant";
+import { useLocation } from "react-router-dom";
 
 const Header = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const location = useLocation();
   const user = useSelector((store) => store.user);
   const showGpt = useSelector((store) => store.gpt?.showGptSearch);
   const lang = useSelector((store) => store.config?.lang);
@@ -52,8 +54,24 @@ const Header = () => {
     dispatch(toggleGptSearchView());
   };
   return (
-    <div className="absolute w-screen px-8 py-2 bg-gradient-to-b from-black z-10 flex justify-between flex-col md:flex-row">
-      <img className="w-44 mx-auto md:mx-0" src={LOGO_URL} alt="logo" />
+    <div className="absolute md:fixed w-screen px-8 py-2 bg-gradient-to-b from-black z-30 flex justify-between flex-col md:flex-row">
+      <div className="flex justify-between">
+        <img className="w-44 mx-auto md:mx-0" src={LOGO_URL} alt="logo" />
+        {user && (
+          <ul className="text-white mt-5 ml-14 hidden md:flex cursor-pointer">
+            <li
+              className={`mr-6 ${
+                location.pathname === "/browse" ? "font-bold" : ""
+              }`}
+            >
+              <Link to="/browse">Home</Link>
+            </li>
+            <li className="mr-6">Movies</li>
+            <li className="mr-6">TV Shows</li>
+          </ul>
+        )}
+      </div>
+
       {user && (
         <div className="flex p-0 md:p-2 justify-between">
           <select

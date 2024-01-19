@@ -7,8 +7,10 @@ import { useSelector } from "react-redux";
 import FullPageLoader from "../utils/FullPageLoader";
 import { useNavigate } from "react-router-dom";
 import useAllTrending from "./hooks/useAllTrending";
-import useTrendingMovies from "./hooks/useTrendingMovies";
-import useTrendingTV from "./hooks/useTrendingTV";
+import useNowPlayingMovies from "./hooks/useNowPlayingMovies";
+import useAiringTodayTV from "./hooks/useAiringTodayTV";
+import useTopRated from "./hooks/useTopRated";
+import useTopRatedTV from "./hooks/useTopRatedTV.js";
 
 const Browse = () => {
   const gptSearchView = useSelector((store) => store.gpt?.showGptSearch);
@@ -18,8 +20,10 @@ const Browse = () => {
     if (!user) navigate("/");
   }, []);
   useAllTrending();
-  useTrendingMovies();
-  useTrendingTV();
+  useNowPlayingMovies();
+  useAiringTodayTV();
+  useTopRated();
+  useTopRatedTV();
   if (!user) return <FullPageLoader />;
   return (
     <div>
