@@ -4,7 +4,7 @@ import { API_OPTIONS } from "../../utils/const";
 import { addTopRatedTV } from "../../utils/movieSlice";
 
 const useTopRatedTV = () => {
-  const topRatedTV = useSelector((store) => store.movies?.topRatedMovies);
+  const topRatedTV = useSelector((store) => store.movies?.topRatedTV);
 
   const dispatch = useDispatch();
   const getTopRatedTV = async () => {
