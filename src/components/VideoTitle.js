@@ -30,31 +30,45 @@ const VideoTitle = ({ title, overview }) => {
         </span>
       )}
       <div className="flex">
-        <button className="flex mx-2 bg-white text-black py-1 md:py-2 px-4 md:px-10 hover:bg-opacity-80 text-xl rounded-lg mt-4 md:mt-0">
+        <button className="flex mx-2 bg-white text-black py-1 md:py-2 px-4 md:px-6 hover:bg-opacity-80 text-xl rounded-lg mt-4 md:mt-0">
           <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
             xmlns="http://www.w3.org/2000/svg"
-            width="48"
-            height="48"
-            viewBox="0 0 48 48"
-            id="play"
-            className="hidden md:block"
+            class="ltr-4z3qvp e1svuwfo1"
+            data-name="Play"
+            aria-hidden="true"
+            className="mt-1 mr-2"
           >
-            <path d="M12 39c-.549 0-1.095-.15-1.578-.447A3.008 3.008 0 0 1 9 36V12c0-1.041.54-2.007 1.422-2.553a3.014 3.014 0 0 1 2.919-.132l24 12a3.003 3.003 0 0 1 0 5.37l-24 12c-.42.21-.885.315-1.341.315z"></path>
+            <path
+              d="M5 2.69127C5 1.93067 5.81547 1.44851 6.48192 1.81506L23.4069 11.1238C24.0977 11.5037 24.0977 12.4963 23.4069 12.8762L6.48192 22.1849C5.81546 22.5515 5 22.0693 5 21.3087V2.69127Z"
+              fill="currentColor"
+            ></path>
           </svg>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="25"
-            height="25"
-            viewBox="0 0 48 48"
-            id="play"
-            className="block md:hidden"
-          >
-            <path d="M12 39c-.549 0-1.095-.15-1.578-.447A3.008 3.008 0 0 1 9 36V12c0-1.041.54-2.007 1.422-2.553a3.014 3.014 0 0 1 2.919-.132l24 12a3.003 3.003 0 0 1 0 5.37l-24 12c-.42.21-.885.315-1.341.315z"></path>
-          </svg>
-          <p className="-mt-[2px] md:mt-2">{language[lang].play}</p>
+          <p className="-mt-[2px] md:mt-0">{language[lang].play}</p>
         </button>
-        <button className="hidden md:block mx-2 bg-gray-500 text-white p-4 px-10 text-xl bg-opacity-50 rounded-lg">
-          {language[lang].moreInfo}
+        <button className="flex mx-2 bg-gray-500 text-white py-1 md:py-2 px-4 md:px-6 hover:bg-opacity-80 text-xl rounded-lg mt-4 md:mt-0">
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            class="ltr-4z3qvp e1svuwfo1"
+            data-name="CircleI"
+            aria-hidden="true"
+            className="mr-2"
+          >
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2ZM0 12C0 5.37258 5.37258 0 12 0C18.6274 0 24 5.37258 24 12C24 18.6274 18.6274 24 12 24C5.37258 24 0 18.6274 0 12ZM13 10V18H11V10H13ZM12 8.5C12.8284 8.5 13.5 7.82843 13.5 7C13.5 6.17157 12.8284 5.5 12 5.5C11.1716 5.5 10.5 6.17157 10.5 7C10.5 7.82843 11.1716 8.5 12 8.5Z"
+              fill="currentColor"
+            ></path>
+          </svg>
+          <p className="-mt-[2px] md:mt-0">{language[lang].moreInfo}</p>
         </button>
       </div>
     </div>

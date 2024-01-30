@@ -19,7 +19,13 @@ const VideoBackground = ({ movieId, page }) => {
             : page === "tv-shows"
             ? tvTrailer?.key
             : trailer?.key) +
-          "?&autoplay=1&mute=1"
+          "?playlist=" +
+          (page === "movie"
+            ? movieTrailer?.key
+            : page === "tv-shows"
+            ? tvTrailer?.key
+            : trailer?.key) +
+          "&autoplay=1&mute=1&loop=1"
         }
         title="YouTube video player"
         frameBorder="0"

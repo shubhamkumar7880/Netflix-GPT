@@ -81,7 +81,7 @@ const Header = () => {
                 location.pathname === "/browse/tv-shows" ? "font-bold" : ""
               }`}
             >
-              <Link to="/browse/tv-shows">Tv Shows</Link>
+              <Link to="/browse/tv-shows">TV Shows</Link>
             </li>
           </ul>
         )}
