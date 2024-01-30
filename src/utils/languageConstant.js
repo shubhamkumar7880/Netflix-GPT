@@ -17,6 +17,8 @@ const language = {
     trendingTV: "Trending TV Shows",
     airingToday: "Airing Today",
     topRatedTV: "Top-Rated TV Shows",
+    onTheAir: "On The Air",
+    popularTV: "Popular TV Shows",
   },
   hindi: {
     search: "खोज",
@@ -36,6 +38,8 @@ const language = {
     trendingTV: "ट्रेंडिंग टीवी शो",
     airingToday: "आज प्रसारित हो रहा है",
     topRatedTV: "टॉप रेटेड टीवी शो",
+    onTheAir: "प्रसारित",
+    popularTV: "लोकप्रिय टीवी शो",
   },
   french: {
     search: "recherche",
@@ -55,6 +59,8 @@ const language = {
     trendingTV: "ÉMISSIONS TV tendances",
     airingToday: "diffusé aujourd'hui",
     topRatedTV: "Émissions de télévision les mieux notées",
+    onTheAir: "À l'antenne",
+    popularTV: "télévision populaire",
   },
   spanish: {
     search: "buscar",
@@ -74,6 +80,8 @@ const language = {
     trendingTV: "Programas de televisión de tendencia",
     airingToday: "transmitiendo hoy",
     topRatedTV: "Programas de televisión mejor valorados",
+    onTheAir: "En el aire",
+    popularTV: "televisión popular",
   },
 };
 

@@ -21,12 +21,24 @@ const SecondaryConatiner = ({ page = "" }) => {
       "topRatedMovies",
       "upcomingMovies",
     ];
+  } else if (page === "tv-shows") {
+    movieArr = [
+      "trendingTV",
+      "airingToday",
+      "onTheAir",
+      "popularTV",
+      "topRatedTV",
+    ];
   }
   return (
     <div className="bg-black">
       <div className="mt-0 md:-mt-56 pl-4 md:pl-16 relative z-20">
         {movieArr.map((movie) => (
-          <MovieList title={language[lang]?.[movie]} movies={movies?.[movie]} />
+          <MovieList
+            key={movie}
+            title={language[lang]?.[movie]}
+            movies={movies?.[movie]}
+          />
         ))}
       </div>
     </div>

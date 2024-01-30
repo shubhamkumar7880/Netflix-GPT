@@ -57,7 +57,9 @@ const Header = () => {
   return (
     <div className="absolute md:fixed w-screen px-8 py-2 bg-gradient-to-b from-black z-30 flex justify-between flex-col md:flex-row">
       <div className="flex justify-between">
-        <img className="w-44 mx-auto md:mx-0" src={LOGO_URL} alt="logo" />
+        <Link to="/browse">
+          <img className="w-44 mx-auto md:mx-0" src={LOGO_URL} alt="logo" />
+        </Link>
         {user && (
           <ul className="text-white mt-5 ml-14 hidden md:flex cursor-pointer">
             <li
