@@ -19,9 +19,9 @@ const VideoTitle = ({ title, overview }) => {
       <p
         className={`hidden md:block py-6 text-lg ${more ? "w-full" : "w-1/2"}`}
       >
-        {overview.length > 400 && !more ? overview.slice(0, 400) : overview}
+        {overview?.length > 400 && !more ? overview?.slice(0, 400) : overview}
       </p>
-      {overview.length > 400 && (
+      {overview?.length > 400 && (
         <span
           className="hidden md:block -mt-6 mb-3 cursor-pointer underline"
           onClick={() => setMore(!more)}

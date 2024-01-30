@@ -74,7 +74,13 @@ const Header = () => {
             >
               <Link to="/browse/movies">Movies</Link>
             </li>
-            <li className="mr-6">TV Shows</li>
+            <li
+              className={`mr-6 ${
+                location.pathname === "/browse/tv-shows" ? "font-bold" : ""
+              }`}
+            >
+              <Link to="/browse/tv-shows">Tv Shows</Link>
+            </li>
           </ul>
         )}
       </div>
