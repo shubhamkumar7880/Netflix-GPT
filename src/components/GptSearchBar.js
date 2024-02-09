@@ -59,7 +59,6 @@ const GptSearchBar = ({ setLoading }) => {
         searchQuery: searchText.current.value,
       })
     );
-    console.log("filtered movies", filteredMovies);
     searchText.current.value = "";
     setLoading(false);
   };

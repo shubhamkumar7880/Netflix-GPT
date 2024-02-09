@@ -22,12 +22,13 @@ const useMovieTrailer = (movieId, page) => {
       (item) => item?.type === "Trailer"
     );
     const trailer = filteredMovie ?? json?.results[0];
+    if (!trailer) getTvVideos("tv");
     if (page === "movie") {
       dispatch(addMovieTrailer(trailer));
     } else dispatch(addTrailerVideo(trailer));
   };
 
-  const getTvVideos = async () => {
+  const getTvVideos = async (tv) => {
     const data = await fetch(
       `https://api.themoviedb.org/3/tv/${movieId}/videos`,
       API_OPTIONS
@@ -37,7 +38,9 @@ const useMovieTrailer = (movieId, page) => {
       (item) => item?.name === "Official Trailer"
     );
     const trailer = filteredMovie ?? json?.results[0];
-    dispatch(addTvTrailer(trailer));
+    if (tv === "tv") {
+      dispatch(addTrailerVideo(trailer));
+    } else dispatch(addTvTrailer(trailer));
   };
 
   useEffect(() => {

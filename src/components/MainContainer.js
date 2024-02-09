@@ -28,7 +28,10 @@ const MainContainer = ({ page = "" }) => {
   } else {
     if (!allTrending) return;
     else {
-      original_title = allTrending[0]?.original_title;
+      original_title =
+        allTrending[0]?.media_type === "tv"
+          ? allTrending[0]?.original_name
+          : allTrending[0]?.original_title;
       overview = allTrending[0]?.overview;
       id = allTrending[0]?.id;
     }

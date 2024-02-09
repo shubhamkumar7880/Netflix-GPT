@@ -8,7 +8,6 @@ const VideoTitle = ({ title, overview, movieId }) => {
   const lang = useSelector((store) => store.config?.lang);
   const location = useLocation();
   const genre = location.pathname.slice(8);
-  console.log("genre", genre);
   const [more, setMore] = useState(false);
   const navigate = useNavigate();
 

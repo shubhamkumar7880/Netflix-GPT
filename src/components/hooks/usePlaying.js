@@ -1,6 +1,6 @@
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { API_OPTIONS } from "../../utils/const";
-import { addPlaying, addTvTrailer } from "../../utils/movieSlice";
+import { addPlaying } from "../../utils/movieSlice";
 import { useEffect } from "react";
 
 const usePlaying = (movieId, page) => {
@@ -15,6 +15,7 @@ const usePlaying = (movieId, page) => {
       (item) => item?.type === "Trailer"
     );
     const trailer = filteredMovie ?? json?.results[0];
+    if (!trailer) getTvVideos();
     dispatch(addPlaying(trailer));
   };
 
