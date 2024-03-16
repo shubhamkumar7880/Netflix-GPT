@@ -3,9 +3,12 @@ import { useSelector } from "react-redux";
 import MovieList from "./MovieList";
 import FullPageLoader from "../utils/FullPageLoader";
 import language from "../utils/languageConstant";
-const GptMovieSuggestion = ({ loading }) => {
+import GptError from "./GptError";
+
+const GptMovieSuggestion = ({ loading, error }) => {
   const searchedMovies = useSelector((store) => store.gpt);
   const lang = useSelector((store) => store.config.lang);
+  if(error) return <GptError />
   if (!searchedMovies?.gptMovies && !loading) return null;
   if (!searchedMovies?.gptMovies && loading) return <FullPageLoader />;
   return (

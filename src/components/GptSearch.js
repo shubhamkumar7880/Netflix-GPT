@@ -5,6 +5,7 @@ import { BG_IMG } from "../utils/const";
 
 const GptSearch = () => {
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
   return (
     <div>
       <div className="fixed -z-10">
@@ -15,8 +16,8 @@ const GptSearch = () => {
         />
       </div>
       <div className="">
-        <GptSearchBar setLoading={setLoading} />
-        <GptMovieSuggestion loading={loading} />
+        <GptSearchBar setLoading={setLoading} setError={setError} />
+        <GptMovieSuggestion loading={loading} error={error} />
       </div>
     </div>
   );

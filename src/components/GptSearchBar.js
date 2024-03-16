@@ -1,11 +1,11 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import language from "../utils/languageConstant";
 import openai from "../utils/openAI";
 import { API_OPTIONS } from "../utils/const";
 import { addGptMovies } from "../utils/gptSlice";
 
-const GptSearchBar = ({ setLoading }) => {
+const GptSearchBar = ({ setLoading, setError }) => {
   const lang = useSelector((store) => store.config.lang);
   const searchText = useRef(null);
   const dispatch = useDispatch();
@@ -24,6 +24,7 @@ const GptSearchBar = ({ setLoading }) => {
 
   const handleGPTSearch = async () => {
     if (searchText.current.value === "") return;
+    try{
     setLoading(true);
     const gptQuery =
       "Act as a movie recommendation system and suggest some movies for the query: " +
@@ -61,6 +62,11 @@ const GptSearchBar = ({ setLoading }) => {
     );
     searchText.current.value = "";
     setLoading(false);
+    }catch(err){
+      console.log('gpt error',err);
+      setError(err);
+      setLoading(false);
+    }
   };
 
   return (
